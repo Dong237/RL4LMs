@@ -1,0 +1,13 @@
+version: 2
+
+sphinx:
+  fail_on_warning: true
+
+build:
+  os: "ubuntu-22.04.2"
+  tools:
+    python: 
+      version: "3.8"
+      install:
+        - method: pip
+          path: .
