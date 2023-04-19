@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'rl4lms'
+project = 'RL4LMs'
 copyright = '2023, Youxiang Dong'
 author = 'Youxiang Dong'
 release = '0.0.1'
