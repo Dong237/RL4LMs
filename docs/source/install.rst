@@ -3,19 +3,24 @@ Installation
 
 Local Installation
 ------------------
-```bash
-git clone https://github.com/allenai/RL4LMs.git
-cd RL4LMs
-pip install -e .
-```
+
+.. code-block:: bash
+
+   git clone https://github.com/allenai/RL4LMs.git
+   cd RL4LMs
+   pip install -e .
+
+
 
 Docker
 ------
 
 We provide also a Dockerfile for development using docker containers containing all the dependencies.
-```bash
+
+.. code-block:: bash
+
 docker build . -t rl4lms
-```
+
 
 Additional dependencies
 -----------------------
