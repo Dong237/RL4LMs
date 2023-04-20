@@ -6,14 +6,12 @@
 Welcome to RL4LMs's documentation!
 ==================================
 
+.. note:: The documentation is currently under active development
+
 .. image:: _static/img/RL4LMs_logo.png
    :width: 400
    :align: center
    :alt: Project Logo
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
 RL4LMs provides easily customizable building blocks for training language models, including implementations of **on-policy algorithms**, **reward functions**, **metrics**, **datasets** and **LM based actor-critic policies**
 
@@ -45,7 +43,12 @@ Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: 
 
 All of these building blocks can be customizable allowing users to train transformer-based LMs to optimize any arbitrary reward function on any dataset of their choice.
 
-.. note:: The documentation is currently under active development
+.. toctree::
+   :maxdepth: 2
+   :caption: Introduction
+   
+   install
+   quickstart
 
 
 Indices and tables
