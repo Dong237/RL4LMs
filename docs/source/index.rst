@@ -43,6 +43,8 @@ Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: 
 
 All of these building blocks can be customizable allowing users to train transformer-based LMs to optimize any arbitrary reward function on any dataset of their choice.
 
+.. note:: The documentation is currently under active development
+
 
 Indices and tables
 ==================
