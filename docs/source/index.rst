@@ -52,3 +52,18 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+Citing RL4LMs
+=============
+To cite this project in publications:
+
+.. code-block:: bibtex
+
+   @inproceedings{Ramamurthy2022IsRL,
+      title={Is Reinforcement Learning (Not) for Natural Language Processing?: Benchmarks, Baselines, and Building Blocks for Natural Language Policy Optimization},
+      author={Rajkumar Ramamurthy and Prithviraj Ammanabrolu and Kiant{\'e} Brantley and Jack Hessel and Rafet Sifa and Christian Bauckhage and Hannaneh Hajishirzi and Yejin Choi},
+      journal={arXiv preprint arXiv:2210.01241},
+      url={https://arxiv.org/abs/2210.01241},
+      year={2022}
+   }
