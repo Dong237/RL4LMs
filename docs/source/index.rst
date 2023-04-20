@@ -23,6 +23,8 @@ Paper Link: https://arxiv.org/abs/2210.01241
 
 Website Link: https://rl4lms.apps.allenai.org/
 
+.. todo::
+   fix problem with "fire" and "trophy"
 Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: (GRUE benchmark :trophy:) on a comprehensive set of: 
 
 - 7 different Natural Language Processing (NLP) Tasks:
@@ -58,6 +60,9 @@ Citing RL4LMs
 =============
 To cite this project in publications:
 
+.. todo::
+   Problem with citation (name of Brantley)
+   
 .. code-block:: bibtex
 
    @inproceedings{Ramamurthy2022IsRL,
@@ -67,3 +72,4 @@ To cite this project in publications:
       url={https://arxiv.org/abs/2210.01241},
       year={2022}
    }
+
