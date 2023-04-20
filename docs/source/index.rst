@@ -6,7 +6,10 @@
 Welcome to RL4LMs's documentation!
 ==================================
 
-.. image:: RL4LMs/RL4LMs_logo.png
+.. image:: _static/img/RL4LMs_logo.png
+   :width: 400
+   :align: center
+   :alt: Project Logo
 
 .. toctree::
    :maxdepth: 2
