@@ -1,6 +1,9 @@
 Quick Start - Train PPO/NLPO using pre-defined YAML configs
 ===========================================================
 
+.. todo::
+   fix problems with all code-blocks
+
 We provide a simple training API that can be invoked via train [script](https://github.com/allenai/RL4LMs/blob/main/scripts/training/train_text_generation.py) that allows to train PPO, NLPO or a supervised model by using a config file (YAML). 
 
 For example, to train T5-base on CNN/DM summarization on PPO using Rouge-1 as reward function, you can run:
