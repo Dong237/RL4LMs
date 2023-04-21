@@ -20,15 +20,12 @@ Github Repository: https://github.com/allenai/RL4LMs
 Paper Link: https://arxiv.org/abs/2210.01241
 
 Website Link: https://rl4lms.apps.allenai.org/
-
-.. todo::
-   fix problem with "fire" and "trophy"
    
    
 Main Characteristics
 --------------------
 
-RL4LMs is thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: (GRUE benchmark :trophy:) on a comprehensive set of: 
+RL4LMs is thoroughly **tested** and **benchmarked** with over **2000 experiments** (GRUE benchmark) on a comprehensive set of: 
 
 - 7 different Natural Language Processing (NLP) Tasks:
     - Summarization
