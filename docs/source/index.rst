@@ -55,6 +55,10 @@ All of these building blocks can be customizable allowing users to train transfo
    install
    quickstart
    blocks
+   
+.. rst-class:: caption
+   
+   **Introduction**
 
 Indices and tables
 ------------------
