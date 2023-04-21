@@ -1,25 +1,23 @@
 Quick Start - Train PPO/NLPO using pre-defined YAML configs
 ===========================================================
 
-.. todo::
-   fix problems with all code-blocks
-
-We provide a simple training API that can be invoked via train [script](https://github.com/allenai/RL4LMs/blob/main/scripts/training/train_text_generation.py) that allows to train PPO, NLPO or a supervised model by using a config file (YAML). 
+We provide a simple training API that can be invoked via train `script <https://github.com/allenai/RL4LMs/blob/main/scripts/training/train_text_generation.py>`_ that allows to train PPO, NLPO or a supervised model by using a config file (YAML). 
 
 For example, to train T5-base on CNN/DM summarization on PPO using Rouge-1 as reward function, you can run:
 
 .. code-block:: bash
+
    python scripts/training/train_text_generation.py --config_path scripts/training/task_configs/summarization/t5_ppo.yml
 
 
-Config files for all tasks can be found [here](https://github.com/allenai/RL4LMs/tree/main/scripts/training/task_configs).
+Config files for all tasks can be found `here <https://github.com/allenai/RL4LMs/tree/main/scripts/training/task_configs>`_.
 
 YAML file schema - Configuring building blocks
 ----------------------------------------------
 
 Config file contains details about hyper-parameter settings for building blocks which are described below:
 
-- **Dataset/Task**: Dataset containing samples with input prompts and reference sentences. Available datasets are found in the class `DataPoolRegistry` in [registry](https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/registry.py). (See how to create your own dataset [here](#adding-dataset))
+- **Dataset/Task**: Dataset containing samples with input prompts and reference sentences. Available datasets are found in the class `DataPoolRegistry` in `registry <https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/registry.py>`_. (See how to create your own dataset [here](#adding-dataset))
 
 .. code-block:: yaml
    {datapool:{id: cnn_daily_mail, args: {prompt_prefix: "Summarize: "}}
@@ -43,7 +41,7 @@ Config file contains details about hyper-parameter settings for building blocks 
        rouge_type: "rouge1"
 
 
-- **Environment**: Configures a gym-style text generation [environment](https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/env.py) which simulates MDP episodes. Rollouts are generated using train samples from dataset consisting of input and reference texts.
+- **Environment**: Configures a gym-style text generation `environment <https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/env.py>`_ which simulates MDP episodes. Rollouts are generated using train samples from dataset consisting of input and reference texts.
 Further, we wrap our env with `SubProcVecEnv` from stable-baselines that processes `n_envs` episodes in parallel using multi-processing to compute step-wise rewards.  
 Further configuration settings include: 
   - `max_episode_length` : max length of the episode 
@@ -63,11 +61,11 @@ Further configuration settings include:
        context_start_token: 0
 
 
-- **On-policy alg**: We provide implementations of 4 on-policy algorithms: PPO, NLPO, A2C and TRPO adapted from [stable-baselines3](https://github.com/DLR-RM/stable-baselines3) tailored to work with NLP tasks which can be used out-of-the-box with either a causal policy or a seq2seq LM policy. (See how to create your own [on-policy algorithm](#adding-custom-on-policy-algorithms) or [policy](#adding-custom-policies))
-  - We also provide a supervised [trainer](https://github.com/allenai/RL4LMs/blob/2863116cd5860e4a4106a76486e70bfac25df2ba/rl4lms/envs/text_generation/training_utils.py#L225) for benchmarking purposes. Supervised Warm start models are already uploaded to Huggingface Hub and specified in the respective config files.
+- **On-policy alg**: We provide implementations of 4 on-policy algorithms: PPO, NLPO, A2C and TRPO adapted from `stable-baselines3 <https://github.com/DLR-RM/stable-baselines3>`_ tailored to work with NLP tasks which can be used out-of-the-box with either a causal policy or a seq2seq LM policy. (See how to create your own [on-policy algorithm](#adding-custom-on-policy-algorithms) or [policy](#adding-custom-policies))
+  - We also provide a supervised `trainer <https://github.com/allenai/RL4LMs/blob/2863116cd5860e4a4106a76486e70bfac25df2ba/rl4lms/envs/text_generation/training_utils.py#L225>`_ for benchmarking purposes. Supervised Warm start models are already uploaded to Huggingface Hub and specified in the respective config files.
   - Hyper-parameters for the algorithm can be specified at `alg/args`. 
   - Further, all RL algorithms use adaptive KL controller to keep the LM close to original LM by setting initial KL co-efficient (`alg/kl_div/coeff`) and target KL (`alg/kl_div/target_kl`). 
-  - We support two types of LM policy: **causal LM policy** (for decoder only models) and **seq2seq LM policy** (for encoder-decoder models). Further for NLPO, we also provide maskable variants of these. Policy implementations can be found [here](https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/policy.py) in and it can be attached to algorithms by specifying `alg/policy/id` and `alg/policy/args`
+  - We support two types of LM policy: **causal LM policy** (for decoder only models) and **seq2seq LM policy** (for encoder-decoder models). Further for NLPO, we also provide maskable variants of these. Policy implementations can be found `here <https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/policy.py>`_ in and it can be attached to algorithms by specifying `alg/policy/id` and `alg/policy/args`
 
 .. code-block:: yaml
    alg:
@@ -94,7 +92,7 @@ Further configuration settings include:
          min_length: 50
          max_new_tokens: 100          
 
-- **Trainer Config**: We provide an [On-policy trainer](https://github.com/allenai/RL4LMs/blob/2863116cd5860e4a4106a76486e70bfac25df2ba/rl4lms/envs/text_generation/training_utils.py#L126) - a feature-complete wrapper that instantiates building blocks from their corresponding configs and provides an outer training loop consisting of *train* and *eval* iterations `train_evaluation/n_iters`. 
+- **Trainer Config**: We provide an `On-policy trainer <https://github.com/allenai/RL4LMs/blob/2863116cd5860e4a4106a76486e70bfac25df2ba/rl4lms/envs/text_generation/training_utils.py#L126>`_ - a feature-complete wrapper that instantiates building blocks from their corresponding configs and provides an outer training loop consisting of *train* and *eval* iterations `train_evaluation/n_iters`. 
   - Each iteration corresponds to performing updates with `alg/args/n_steps` x `env/n_envs` of the chosen algorithm. 
   - For every `eval_every` iters, LM is evaluated on validation split using metrics listed in `train_evaluation/metrics` with generation kwargs provided in `train_evaluation/generation_kwargs` (this overrides rollout `alg/policy/generation_kwargs` for inference purposes only)
 
