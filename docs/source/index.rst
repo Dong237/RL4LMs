@@ -23,7 +23,12 @@ Website Link: https://rl4lms.apps.allenai.org/
 
 .. todo::
    fix problem with "fire" and "trophy"
-Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: (GRUE benchmark :trophy:) on a comprehensive set of: 
+   
+   
+Main Characteristics
+--------------------
+
+RL4LMs is thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: (GRUE benchmark :trophy:) on a comprehensive set of: 
 
 - 7 different Natural Language Processing (NLP) Tasks:
     - Summarization
@@ -52,7 +57,7 @@ All of these building blocks can be customizable allowing users to train transfo
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
@@ -60,7 +65,7 @@ Indices and tables
 
 
 Citing RL4LMs
-=============
+-------------
 To cite this project in publications:
 
 .. todo::
