@@ -45,6 +45,9 @@ RL4LMs is thoroughly **tested** and **benchmarked** with over **2000 experiments
 
 All of these building blocks can be customizable allowing users to train transformer-based LMs to optimize any arbitrary reward function on any dataset of their choice.
 
+.. todo::
+   Problem with Introduction headline
+   
 .. toctree::
    :maxdepth: 2
    :caption: Introduction
@@ -53,9 +56,6 @@ All of these building blocks can be customizable allowing users to train transfo
    quickstart
    blocks
    
-.. rst-class:: caption
-   
-   **Introduction**
 
 Indices and tables
 ------------------
