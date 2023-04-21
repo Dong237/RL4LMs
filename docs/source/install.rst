@@ -19,7 +19,7 @@ We provide also a Dockerfile for development using docker containers containing 
 
 .. code-block:: bash
 
-docker build . -t rl4lms
+   docker build . -t rl4lms
 
 
 Additional dependencies
