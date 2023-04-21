@@ -22,10 +22,7 @@ Config file contains details about hyper-parameter settings for building blocks 
 - **Dataset/Task**: Dataset containing samples with input prompts and reference sentences. Available datasets are found in the class `DataPoolRegistry` in [registry](https://github.com/allenai/RL4LMs/blob/main/rl4lms/envs/text_generation/registry.py). (See how to create your own dataset [here](#adding-dataset))
 
 .. code-block:: yaml
-   datapool:
-     id: cnn_daily_mail
-     args:
-       prompt_prefix: "Summarize: "
+   {datapool:{id: cnn_daily_mail, args: {prompt_prefix: "Summarize: "}}
 
 
 - **Tokenizer** - A pre-trained tokenizer that is used to (de)tokenize input and output sequences with settings for padding and truncation
