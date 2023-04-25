@@ -11,7 +11,7 @@ A2C
 NLPO
 ----
 
-.. autoclass:: rl4lms.algorithms.nlpo.nlpo.
+.. autoclass:: rl4lms.algorithms.nlpo.nlpo
   :members:
 
 PPO
