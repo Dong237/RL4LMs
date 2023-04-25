@@ -55,6 +55,7 @@ All of these building blocks can be customizable allowing users to train transfo
    install
    quickstart
    blocks
+   algorithms
    
 
 Indices and tables
