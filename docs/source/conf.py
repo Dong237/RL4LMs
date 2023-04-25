@@ -14,7 +14,7 @@ release = '0.0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.todo"]
+extensions = ["sphinx.ext.todo", "sphinx.ext.autodoc"]
 todo_include_todos = True
 
 templates_path = ['_templates']
