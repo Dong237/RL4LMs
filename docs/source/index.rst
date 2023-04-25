@@ -44,9 +44,6 @@ RL4LMs is thoroughly **tested** and **benchmarked** with over **2000 experiments
 - Actor-Critic Policies supporting causal LMs (eg. GPT-2/3) and seq2seq LMs (eg. T5, BART)
 
 All of these building blocks can be customizable allowing users to train transformer-based LMs to optimize any arbitrary reward function on any dataset of their choice.
-
-.. todo::
-   Problem with Introduction headline
    
 .. toctree::
    :maxdepth: 2
