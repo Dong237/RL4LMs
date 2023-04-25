@@ -4,24 +4,24 @@ Algorithms
 A2C
 ---
 
-.. autoclass:: rl4lms.algorithms.a2c.a2c.A2C
+.. autoclass:: rl4lms.algorithms.a2c.a2c
   :members:
   
   
 NLPO
 ----
 
-.. autoclass:: rl4lms.algorithms.nlpo.nlpo.NLPO
+.. autoclass:: rl4lms.algorithms.nlpo.nlpo.
   :members:
 
 PPO
 ---
 
-.. autoclass:: rl4lms.algorithms.ppo.ppo.PPO
+.. autoclass:: rl4lms.algorithms.ppo.ppo
   :members:
 
 TRPO
 ----
 
-.. autoclass:: rl4lms.algorithms.trpo.trpo.TRPO
+.. autoclass:: rl4lms.algorithms.trpo.trpo
   :members:
