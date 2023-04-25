@@ -53,6 +53,7 @@ All of these building blocks can be customizable allowing users to train transfo
    quickstart
    blocks
    algorithms
+   env
    
 
 Indices and tables
