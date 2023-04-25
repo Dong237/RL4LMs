@@ -57,3 +57,15 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+
+# -- Extension configuration -------------------------------------------------
+
+autodoc_member_order = 'bysource'
+
+autodoc_default_options = {
+    'members': None,  # Include all public members.
+    'undoc-members': True,  # Include members that do not have docstrings.
+    'show-inheritance': True,
+    'special-members': '__call__, __init__',
+}
