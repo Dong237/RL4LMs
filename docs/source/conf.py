@@ -11,8 +11,7 @@
 import os
 import sys
 import sphinx_rtd_theme
-from typing import Dict, List
-from unittest.mock import MagicMock
+
 
 # We CANNOT enable 'sphinxcontrib.spelling' because ReadTheDocs.org does not support
 # PyEnchant.
