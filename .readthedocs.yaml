@@ -6,10 +6,10 @@ build:
   tools:
     python: "3.8"
 
-# build from sphinx
-sphinx:
-  configuration: docs/conf.py
-  fail_on_warning: true
+# # build from sphinx
+# sphinx:
+#   configuration: docs/conf.py
+#   fail_on_warning: true
 
 # set python requirements
 python:
