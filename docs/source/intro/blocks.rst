@@ -26,7 +26,7 @@ Users can create their own datasets by sub-classing `TextGenPool <https://github
         
 Adding reward function
 ----------------------
-Custom reward funtions can be implemented easily by sub-classing `RewardFunction <https://github.com/allenai/RL4LMs/blob/af5a1326578789856ca8550cb5496c9ccc1afdc5/rl4lms/envs/text_generation/reward.py#L12>`_ (a callable) which takes observation ($s$), next observation ($s'$), action ($a$), done (indicating whether episode is finished) and meta info (containing other information about textual input). Here, `Observation <https://github.com/allenai/RL4LMs/blob/af5a1326578789856ca8550cb5496c9ccc1afdc5/rl4lms/envs/text_generation/observation.py#L11>`_ is a data class object consisting of generated text (at a particular step), prompt text, context text (at that step), reference text which can be used to compute token-level or sentence level rewards.
+Custom reward funtions can be implemented easily by sub-classing `RewardFunction <https://github.com/allenai/RL4LMs/blob/af5a1326578789856ca8550cb5496c9ccc1afdc5/rl4lms/envs/text_generation/reward.py#L12>`_ (a callable) which takes observation (*s*), next observation (*s'*), action (*a*), done (indicating whether episode is finished) and meta info (containing other information about textual input). Here, `Observation <https://github.com/allenai/RL4LMs/blob/af5a1326578789856ca8550cb5496c9ccc1afdc5/rl4lms/envs/text_generation/observation.py#L11>`_ is a data class object consisting of generated text (at a particular step), prompt text, context text (at that step), reference text which can be used to compute token-level or sentence level rewards.
 
 .. code:: python
 
