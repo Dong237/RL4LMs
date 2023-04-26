@@ -1,13 +1,13 @@
-ppo package
+rl4lms.algorithms.ppo package
 ===========
 
 Submodules
 ----------
 
-ppo.ppo module
+rl4lms.algorithms.ppo.ppo module
 --------------
 
-.. automodule:: ppo.ppo
+.. automodule:: rl4lms.algorithms.ppo.ppo
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ ppo.ppo module
 Module contents
 ---------------
 
-.. automodule:: ppo
+.. automodule:: rl4lms.algorithms.ppo
    :members:
    :undoc-members:
    :show-inheritance:
