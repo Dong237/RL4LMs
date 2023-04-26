@@ -1,21 +1,21 @@
-trpo package
+rl4lms.algorithms.trpo package
 ============
 
 Submodules
 ----------
 
-trpo.policies module
+rl4lms.algorithms.trpo.policies module
 --------------------
 
-.. automodule:: trpo.policies
+.. automodule:: rl4lms.algorithms.trpo.policies
    :members:
    :undoc-members:
    :show-inheritance:
 
-trpo.trpo module
+rl4lms.algorithms.trpo.trpo module
 ----------------
 
-.. automodule:: trpo.trpo
+.. automodule:: rl4lms.algorithms.trpo.trpo
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ trpo.trpo module
 Module contents
 ---------------
 
-.. automodule:: trpo
+.. automodule:: rl4lms.algorithms.trpo
    :members:
    :undoc-members:
    :show-inheritance:
