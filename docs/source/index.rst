@@ -47,14 +47,17 @@ All of these building blocks can be customizable allowing users to train transfo
    
 .. toctree::
    :maxdepth: 2
-   :caption: Introduction
+   :caption: Getting Started
    
    install
    quickstart
    blocks
-   algorithms
-   env
-   rl4lms
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Modules
+   
+   modules/rl4lms
    
 
 Indices and tables
