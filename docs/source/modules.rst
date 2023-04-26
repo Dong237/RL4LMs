@@ -1,7 +1,10 @@
-rl4lms
-======
+algorithms
+==========
 
 .. toctree::
    :maxdepth: 4
 
-   rl4lms
+   a2c
+   nlpo
+   ppo
+   trpo
