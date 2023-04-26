@@ -4,7 +4,7 @@ algorithms
 .. toctree::
    :maxdepth: 4
 
-   a2c
-   nlpo
-   ppo
-   trpo
+   rl4lms.algorithms.a2c
+   rl4lms.algorithms.nlpo
+   rl4lms.algorithms.ppo
+   rl4lms.algorithms.trpo

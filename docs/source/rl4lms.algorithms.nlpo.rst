@@ -1,21 +1,21 @@
-nlpo package
+rl4lms.algorithms.nlpo package
 ============
 
 Submodules
 ----------
 
-nlpo.nlpo module
+rl4lms.algorithms.nlpo.nlpo module
 ----------------
 
-.. automodule:: nlpo.nlpo
+.. automodule:: rl4lms.algorithms.nlpo.nlpo
    :members:
    :undoc-members:
    :show-inheritance:
 
-nlpo.policies module
+rl4lms.algorithms.nlpo.policies module
 --------------------
 
-.. automodule:: nlpo.policies
+.. automodule:: rl4lms.algorithms.nlpo.policies
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ nlpo.policies module
 Module contents
 ---------------
 
-.. automodule:: nlpo
+.. automodule:: rl4lms.algorithms.nlpo
    :members:
    :undoc-members:
    :show-inheritance:
