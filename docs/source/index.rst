@@ -54,7 +54,7 @@ All of these building blocks can be customizable allowing users to train transfo
    blocks
    algorithms
    env
-   modules
+   rl4lms
    
 
 Indices and tables
