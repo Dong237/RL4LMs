@@ -33,6 +33,9 @@ import sphinx_rtd_theme
 # source code directory, relative to this file, for sphinx-autobuild
 sys.path.insert(0, os.path.abspath("../.."))
 
+# specify the master_doc 
+master_doc = 'index'
+
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -45,7 +48,15 @@ release = '0.0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx_rtd_theme', 'sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'sphinx.ext.autosectionlabel']
+extensions = ['sphinx_rtd_theme', 
+              'sphinx.ext.todo', 
+              'sphinx.ext.viewcode', 
+              'sphinx.ext.autodoc',
+              'sphinx.ext.napoleon',
+              'sphinx.ext.autosummary', 
+              'sphinx.ext.autosectionlabel'
+             ]
+
 todo_include_todos = True
 
 templates_path = ['_templates']
