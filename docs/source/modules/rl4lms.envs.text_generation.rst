@@ -5,7 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
 
    rl4lms.envs.text_generation.caption_metrics
    rl4lms.envs.text_generation.policy
@@ -15,7 +15,7 @@ Submodules
 ----------
 
 rl4lms.envs.text\_generation.alg\_wrappers module
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.alg_wrappers
    :members:
@@ -23,7 +23,7 @@ rl4lms.envs.text\_generation.alg\_wrappers module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.env module
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.env
    :members:
@@ -31,7 +31,7 @@ rl4lms.envs.text\_generation.env module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.evaluation\_utils module
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.evaluation_utils
    :members:
@@ -39,7 +39,7 @@ rl4lms.envs.text\_generation.evaluation\_utils module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.hf\_generation\_utils module
----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.hf_generation_utils
    :members:
@@ -47,7 +47,7 @@ rl4lms.envs.text\_generation.hf\_generation\_utils module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.kl\_controllers module
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.kl_controllers
    :members:
@@ -55,7 +55,7 @@ rl4lms.envs.text\_generation.kl\_controllers module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.logging\_utils module
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.logging_utils
    :members:
@@ -63,7 +63,7 @@ rl4lms.envs.text\_generation.logging\_utils module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.metric module
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.metric
    :members:
@@ -71,7 +71,7 @@ rl4lms.envs.text\_generation.metric module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.observation module
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.observation
    :members:
@@ -79,7 +79,7 @@ rl4lms.envs.text\_generation.observation module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.policy module
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.policy
    :members:
@@ -87,7 +87,7 @@ rl4lms.envs.text\_generation.policy module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.post\_processors module
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.post_processors
    :members:
@@ -95,7 +95,7 @@ rl4lms.envs.text\_generation.post\_processors module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.preference\_reward module
-------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.preference_reward
    :members:
@@ -103,7 +103,7 @@ rl4lms.envs.text\_generation.preference\_reward module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.registry module
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.registry
    :members:
@@ -111,7 +111,7 @@ rl4lms.envs.text\_generation.registry module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.reward module
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.reward
    :members:
@@ -119,7 +119,7 @@ rl4lms.envs.text\_generation.reward module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.test\_datapool module
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.test_datapool
    :members:
@@ -127,7 +127,7 @@ rl4lms.envs.text\_generation.test\_datapool module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.test\_metric module
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.test_metric
    :members:
@@ -135,7 +135,7 @@ rl4lms.envs.text\_generation.test\_metric module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.test\_reward module
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.test_reward
    :members:
@@ -143,7 +143,7 @@ rl4lms.envs.text\_generation.test\_reward module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.training\_utils module
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.training_utils
    :members:
@@ -151,7 +151,7 @@ rl4lms.envs.text\_generation.training\_utils module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.utils\_supervised module
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.utils_supervised
    :members:
@@ -159,7 +159,7 @@ rl4lms.envs.text\_generation.utils\_supervised module
    :show-inheritance:
 
 rl4lms.envs.text\_generation.warm\_start module
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: rl4lms.envs.text_generation.warm_start
    :members:
