@@ -1,11 +1,9 @@
 rl4lms.envs package
 ===================
 
-Subpackages
------------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    rl4lms.envs.common
    rl4lms.envs.text_generation
