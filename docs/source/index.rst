@@ -45,9 +45,9 @@ All of these building blocks can be customizable allowing users to train transfo
    :maxdepth: 2
    :caption: Getting Started
    
-   install
-   quickstart
-   blocks
+   intro/install
+   intro/quickstart
+   intro/blocks
 
 .. toctree::
    :maxdepth: 2
