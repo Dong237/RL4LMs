@@ -13,22 +13,21 @@ import sys
 import sphinx_rtd_theme
 
 
-# We CANNOT enable 'sphinxcontrib.spelling' because ReadTheDocs.org does not support
-# PyEnchant.
-# try:
-#     import sphinxcontrib.spelling  # noqa: F401
+# We CANNOT enable 'sphinxcontrib.spelling' because ReadTheDocs.org does not support PyEnchant.
+try:
+    import sphinxcontrib.spelling  # noqa: F401
 
-#     enable_spell_check = True
-# except ImportError:
-#     enable_spell_check = False
+    enable_spell_check = True
+except ImportError:
+    enable_spell_check = False
 
-# # Try to enable copy button
-# try:
-#     import sphinx_copybutton  # noqa: F401
+# Try to enable copy button
+try:
+    import sphinx_copybutton  # noqa: F401
 
-#     enable_copy_button = True
-# except ImportError:
-#     enable_copy_button = False
+    enable_copy_button = True
+except ImportError:
+    enable_copy_button = False
 
 # source code directory, relative to this file, for sphinx-autobuild
 sys.path.insert(0, os.path.abspath("../.."))
@@ -58,6 +57,12 @@ extensions = ['sphinx_rtd_theme',
              ]
 
 todo_include_todos = True
+
+if enable_spell_check:
+    extensions.append("sphinxcontrib.spelling")
+
+if enable_copy_button:
+    extensions.append("sphinx_copybutton")
 
 templates_path = ['_templates']
 exclude_patterns = []
