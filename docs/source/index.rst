@@ -54,6 +54,7 @@ All of these building blocks can be customizable allowing users to train transfo
    blocks
    algorithms
    env
+   modules
    
 
 Indices and tables
