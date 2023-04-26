@@ -25,4 +25,8 @@ We provide also a Dockerfile for development using docker containers containing 
 Additional dependencies
 -----------------------
 
-Optionally, coreNLP libraries are required for certain metric computations (eg. SPICE) which can be downloaded through `cd rl4lms/envs/text_generation/caption_metrics/spice && bash get_stanford_models.sh`
+Optionally, coreNLP libraries are required for certain metric computations (eg. SPICE) which can be downloaded through 
+
+.. code-block:: bash
+
+   cd rl4lms/envs/text_generation/caption_metrics/spice && bash get_stanford_models.sh
