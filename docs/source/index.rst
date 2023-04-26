@@ -8,10 +8,6 @@ Welcome to RL4LMs's documentation!
 
 .. note:: The documentation is currently under active development
 
-.. image:: _static/img/RL4LMs_logo.png
-   :width: 400
-   :align: center
-   :alt: Project Logo
 
 RL4LMs provides easily customizable building blocks for training language models, including implementations of **on-policy algorithms**, **reward functions**, **metrics**, **datasets** and **LM based actor-critic policies**
 
