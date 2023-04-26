@@ -1,5 +1,5 @@
-rl4lms.algorithms
-=================
+rl4lms.algorithms package
+=========================
 
 .. toctree::
    :maxdepth: 4

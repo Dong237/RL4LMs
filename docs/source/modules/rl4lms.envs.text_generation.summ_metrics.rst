@@ -12,10 +12,3 @@ rl4lms.envs.text\_generation.summ\_metrics.summa\_c module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: rl4lms.envs.text_generation.summ_metrics
-   :members:
-   :undoc-members:
-   :show-inheritance:

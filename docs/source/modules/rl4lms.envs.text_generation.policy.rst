@@ -28,10 +28,3 @@ rl4lms.envs.text\_generation.policy.seq2seq\_policy module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: rl4lms.envs.text_generation.policy
-   :members:
-   :undoc-members:
-   :show-inheritance:

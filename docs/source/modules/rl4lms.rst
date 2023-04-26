@@ -13,10 +13,3 @@ Subpackages
    rl4lms.data_pools
    
 
-Module contents
----------------
-
-.. automodule:: rl4lms
-   :members:
-   :undoc-members:
-   :show-inheritance:

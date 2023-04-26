@@ -1,8 +1,6 @@
 rl4lms.envs.common package
 ==========================
 
-Submodules
-----------
 
 rl4lms.envs.common.action\_space module
 ---------------------------------------
@@ -36,10 +34,3 @@ rl4lms.envs.common.reward module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: rl4lms.envs.common
-   :members:
-   :undoc-members:
-   :show-inheritance:

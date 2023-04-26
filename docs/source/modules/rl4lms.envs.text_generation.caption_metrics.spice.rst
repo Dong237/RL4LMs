@@ -12,10 +12,3 @@ rl4lms.envs.text\_generation.caption\_metrics.spice.spice module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: rl4lms.envs.text_generation.caption_metrics.spice
-   :members:
-   :undoc-members:
-   :show-inheritance:

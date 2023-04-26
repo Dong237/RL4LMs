@@ -166,10 +166,3 @@ rl4lms.envs.text\_generation.warm\_start module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: rl4lms.envs.text_generation
-   :members:
-   :undoc-members:
-   :show-inheritance:

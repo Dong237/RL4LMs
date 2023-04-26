@@ -1,8 +1,6 @@
 rl4lms.algorithms.trpo package
 ============
 
-Submodules
-----------
 
 rl4lms.algorithms.trpo.policies module
 --------------------
@@ -20,10 +18,3 @@ rl4lms.algorithms.trpo.trpo module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: rl4lms.algorithms.trpo
-   :members:
-   :undoc-members:
-   :show-inheritance:
