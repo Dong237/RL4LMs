@@ -34,6 +34,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 
 # specify the master_doc 
 master_doc = 'index'
+source_suffix = '.rst'
 
 
 # -- Project information -----------------------------------------------------
