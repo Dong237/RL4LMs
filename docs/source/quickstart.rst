@@ -114,7 +114,7 @@ Further configuration settings include:
 
 - **Trainer Config**: We provide an `On-policy trainer <https://github.com/allenai/RL4LMs/blob/2863116cd5860e4a4106a76486e70bfac25df2ba/rl4lms/envs/text_generation/training_utils.py#L126>`_ - a feature-complete wrapper that instantiates building blocks from their corresponding configs and provides an outer training loop consisting of *train* and *eval* iterations ``train_evaluation/n_iters``. 
 
-  - Each iteration corresponds to performing updates with `alg/args/n_steps` x `env/n_envs` of the chosen algorithm. 
+  - Each iteration corresponds to performing updates with ``alg/args/n_steps`` x ``env/n_envs`` of the chosen algorithm. 
   
   - For every ``eval_every`` iters, LM is evaluated on validation split using metrics listed in ``train_evaluation/metrics`` with generation kwargs provided in ``train_evaluation/generation_kwargs`` (this overrides rollout ``alg/policy/generation_kwargs`` for inference purposes only)
 
