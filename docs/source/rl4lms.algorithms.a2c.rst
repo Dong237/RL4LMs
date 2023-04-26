@@ -1,13 +1,13 @@
-a2c package
+rl4lms.algorithms.a2c package
 ===========
 
 Submodules
 ----------
 
-a2c.a2c module
+rl4lms.algorithms.a2c.a2c module
 --------------
 
-.. automodule:: a2c.a2c
+.. automodule:: rl4lms.algorithms.a2c.a2c
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ a2c.a2c module
 Module contents
 ---------------
 
-.. automodule:: a2c
+.. automodule:: rl4lms.algorithms.a2c
    :members:
    :undoc-members:
    :show-inheritance:
