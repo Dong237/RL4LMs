@@ -89,7 +89,13 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+# Fix for read the docs
+on_rtd = os.environ.get("READTHEDOCS") == "True"
+if on_rtd:
+    html_theme = "default"
+else:
+    html_theme = "sphinx_rtd_theme"
+
 html_static_path = ['_static']
 html_logo = "_static/img/RL4LMs_logo.png"
 
