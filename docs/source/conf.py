@@ -11,6 +11,8 @@
 import os
 import sys
 import sphinx_rtd_theme
+from typing import Dict, List
+from unittest.mock import MagicMock
 
 
 # We CANNOT enable 'sphinxcontrib.spelling' because ReadTheDocs.org does not support PyEnchant.
@@ -35,6 +37,21 @@ sys.path.insert(0, os.path.abspath("../.."))
 # specify the master_doc 
 master_doc = 'index'
 source_suffix = '.rst'
+
+
+class Mock(MagicMock):
+    __subclasses__ = []  # type: ignore
+
+    @classmethod
+    def __getattr__(cls, name):
+        return MagicMock()
+
+# Mock modules that requires C modules
+# Note: because of that we cannot test examples using CI
+# 'torch', 'torch.nn', 'torch.nn.functional',
+# DO not mock modules for now, we will need to do that for read the docs later
+MOCK_MODULES: List[str] = []
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 
 # -- Project information -----------------------------------------------------
