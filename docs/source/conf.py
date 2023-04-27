@@ -50,7 +50,7 @@ class Mock(MagicMock):
 # Note: because of that we cannot test examples using CI
 # 'torch', 'torch.nn', 'torch.nn.functional',
 # DO not mock modules for now, we will need to do that for read the docs later
-MOCK_MODULES: List[str] = []
+MOCK_MODULES: List[str] = ['torch', 'torch.nn', 'torch.nn.functional', 'torch.distributions', 'numpy', "scipy]
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 
