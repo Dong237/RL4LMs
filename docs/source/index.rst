@@ -62,13 +62,6 @@ All of these building blocks can be customizable allowing users to train transfo
    modules/rl4lms.data_pools
    
 
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
 
 Citing RL4LMs
 -------------
@@ -87,3 +80,10 @@ To cite this project in publications:
       year={2022}
    }
 
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
