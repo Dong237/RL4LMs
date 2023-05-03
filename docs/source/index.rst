@@ -66,9 +66,6 @@ All of these building blocks can be customizable allowing users to train transfo
 Citing RL4LMs
 -------------
 To cite this project in publications:
-
-.. todo::
-   Problem with citation (name of Brantley)
    
 .. code-block:: bibtex
 
