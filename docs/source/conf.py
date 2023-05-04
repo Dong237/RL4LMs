@@ -71,8 +71,12 @@ extensions = ['sphinx_rtd_theme',
               'sphinx.ext.autodoc',
               'sphinx.ext.napoleon',
               'sphinx.ext.autosummary', 
-              'sphinx.ext.autosectionlabel'
+              'sphinx.ext.autosectionlabel',
+              'sphinxcontrib.apidoc'
              ]
+apidoc_module_dir = '../rl4lms'
+apidoc_output_dir = '../docs/source'
+apidoc_separate_modules = True
 
 todo_include_todos = True
 
