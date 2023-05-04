@@ -15,14 +15,6 @@ from typing import Dict, List
 from unittest.mock import MagicMock
 
 
-# We CANNOT enable 'sphinxcontrib.spelling' because ReadTheDocs.org does not support PyEnchant.
-try:
-    import sphinxcontrib.spelling  # noqa: F401
-
-    enable_spell_check = True
-except ImportError:
-    enable_spell_check = False
-
 # Try to enable copy button
 try:
     import sphinx_copybutton  # noqa: F401
@@ -50,7 +42,7 @@ class Mock(MagicMock):
 # Note: because of that we cannot test examples using CI
 # 'torch', 'torch.nn', 'torch.nn.functional',
 # DO not mock modules for now, we will need to do that for read the docs later
-MOCK_MODULES = [] # ['torch', 'torch.nn']
+MOCK_MODULES = ['torch', 'torch.nn']
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 
@@ -76,8 +68,6 @@ extensions = ['sphinx_rtd_theme',
 
 todo_include_todos = True
 
-if enable_spell_check:
-    extensions.append("sphinxcontrib.spelling")
 
 if enable_copy_button:
     extensions.append("sphinx_copybutton")
