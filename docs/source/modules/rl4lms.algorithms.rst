@@ -5,7 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    rl4lms.algorithms.a2c
    rl4lms.algorithms.common
