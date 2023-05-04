@@ -56,10 +56,7 @@ All of these building blocks can be customizable allowing users to train transfo
    :maxdepth: 2
    :caption: Module Guide
    
-   modules/rl4lms.algorithms
-   modules/rl4lms.envs
-   modules/rl4lms.core_components
-   modules/rl4lms.data_pools
+   modules/rl4lms
    
 
 
