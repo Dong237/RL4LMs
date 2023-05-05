@@ -8,6 +8,7 @@ rl4lms.algorithms.a2c.a2c module
 --------------------------------
 
 .. automodule:: rl4lms.algorithms.a2c.a2c
+   :imported-members:
    :members:
    :undoc-members:
    :show-inheritance:
