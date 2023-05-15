@@ -49,9 +49,6 @@ All of these building blocks can be customizable allowing users to train transfo
    intro/quickstart
    intro/blocks
 
-.. todo::
-   Solve the problem with rl4lms.algorithms not being shown
-
 .. toctree::
    :maxdepth: 2
    :caption: Module Guide
