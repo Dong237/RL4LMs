@@ -226,7 +226,8 @@ class LMActorCriticPolicy(BasePolicy):
             generation_kwargs_ = gen_kwargs
 
         # generate
-        gen_output = unwrap_model(self._policy_model).generate(
+        unwrapped_model = unwrap_model(self._policy_model).to(self.get_policy_first_device())
+        gen_output = unwrapped_model.generate(
             inputs=input_ids.to(self.get_policy_first_device()),
             attention_mask=attention_mask.to(self.get_policy_first_device()),
             return_dict_in_generate=True,
