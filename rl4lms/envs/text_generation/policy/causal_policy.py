@@ -8,7 +8,7 @@ from stable_baselines3.common.distributions import CategoricalDistribution
 from stable_baselines3.common.type_aliases import Schedule, TensorDict
 from torch import nn
 from torch.distributions import Categorical
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from transformers.modeling_utils import unwrap_model
 
 from rl4lms.algorithms.common.maskable.distributions import (
@@ -33,6 +33,28 @@ from rl4lms.envs.text_generation.warm_start import (
     MaskableActorCriticWarmStartMixin,
 )
 
+from peft import ( 
+    LoraConfig,
+    get_peft_model,
+    prepare_model_for_int8_training
+)
+
+LORA_CONFIG = {
+    "lora_r": 4,
+    "lora_alpha": 16,
+    "lora_target_modules": [
+        "q_proj",
+        "v_proj",
+    ],  # ["query_key_value",]
+    "lora_dropout": 0.05
+}
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type='nf4',
+    bnb_4bit_compute_dtype="float16", #halves the size of the mdoel
+    bnb_4bit_use_double_quant=False,
+    )
 
 class CausalLMActorCriticPolicy(LMActorCriticPolicy, ActorCriticWarmStartMixin):
     def __init__(
@@ -65,33 +87,66 @@ class CausalLMActorCriticPolicy(LMActorCriticPolicy, ActorCriticWarmStartMixin):
         )
         self.load_from_dict(state_dict)
 
+    def _get_lora_model(self, model, lora_config):
+        model = prepare_model_for_int8_training(
+            model, 
+            use_gradient_checkpointing=True
+            )
+        config = LoraConfig(
+            r=lora_config["lora_r"],
+            lora_alpha=lora_config["lora_alpha"],
+            target_modules=lora_config["lora_target_modules"],
+            lora_dropout=lora_config["lora_dropout"],
+            bias="none",
+            task_type="CAUSAL_LM"
+        )
+
+        model = get_peft_model(model, config)
+        return model 
+
     def _build_model_heads(self, model_name: str):
-        self._policy_model = AutoModelForCausalLM.from_pretrained(model_name)
+        self._policy_model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            cache_dir="/scratch/huggingface",
+            device_map="auto",
+            quantization_config=bnb_config,
+            offload_folder="offload",  # optional offload-to-disk overflow directory (auto-created)
+            offload_state_dict=True,
+            )
         self._policy_model.__class__ = override_generation_routines(
             type(self._policy_model)
         )
+        self._policy_model = self._get_lora_model(self._policy_model, LORA_CONFIG)
 
-        self._value_model = AutoModelForCausalLM.from_pretrained(model_name)
+        self._value_model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            cache_dir="/scratch/huggingface",
+            device_map="auto",
+            quantization_config=bnb_config,
+            offload_folder="offload",  # optional offload-to-disk overflow directory (auto-created)
+            offload_state_dict=True,
+            )
+        self._value_model = self._get_lora_model(self._value_model, LORA_CONFIG)
         self._ref_model = deepcopy(self._policy_model).eval()
 
         self._value_head = nn.Linear(
             self._value_model.config.hidden_size, 1, bias=False
         )
 
-        # apply model parallel
-        if torch.cuda.is_available():
-            if self._apply_model_parallel and self._policy_model.is_parallelizable:
-                self._policy_model.parallelize()
-                self._ref_model.parallelize()
-                self._value_model.parallelize()
-                self._value_head = self._value_head.to(self.device)
-            else:  # else defaults to data parallel
-                self._policy_model = torch.nn.DataParallel(self._policy_model)
-                self._ref_model = torch.nn.DataParallel(self._ref_model)
-                self._value_model = torch.nn.DataParallel(self._value_model)
-                self._value_head = torch.nn.DataParallel(
-                    self._value_head.to(self.device)
-                )
+        # # apply model parallel
+        # if torch.cuda.is_available():
+        #     if self._apply_model_parallel and self._policy_model.is_parallelizable:
+        #         self._policy_model.parallelize()
+        #         self._ref_model.parallelize()
+        #         self._value_model.parallelize()
+        #         self._value_head = self._value_head.to(self.device)
+        #     else:  # else defaults to data parallel
+        #         self._policy_model = torch.nn.DataParallel(self._policy_model)
+        #         self._ref_model = torch.nn.DataParallel(self._ref_model)
+        #         self._value_model = torch.nn.DataParallel(self._value_model)
+        #         self._value_head = torch.nn.DataParallel(
+        #             self._value_head.to(self.device)
+        #         )
 
     def _prepare_inputs_for_model(
         self,
