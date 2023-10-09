@@ -132,6 +132,7 @@ class CausalLMActorCriticPolicy(LMActorCriticPolicy, ActorCriticWarmStartMixin):
         self._value_head = nn.Linear(
             self._value_model.config.hidden_size, 1, bias=False
         )
+        self._value_head = self._value_head.to(self.device)
 
         # # apply model parallel
         # if torch.cuda.is_available():
@@ -310,12 +311,15 @@ class CausalLMActorCriticPolicy(LMActorCriticPolicy, ActorCriticWarmStartMixin):
         return ref_policy_outputs
 
     def get_policy_first_device(self):
-        return (
-            self._policy_model.transformer.first_device
-            if self._apply_model_parallel
-            and unwrap_model(self._policy_model).is_parallelizable
-            else "cuda"
-        )
+        param_0 = list(self._policy_model.parameters())[0]
+        device = param_0.device
+        return device
+        # return (
+        #     self._policy_model.transformer.first_device
+        #     if self._apply_model_parallel
+        #     and unwrap_model(self._policy_model).is_parallelizable
+        #     else "cuda"
+        # )
 
     def get_inputs_for_generation(self, obs: TensorDict):
         gen_inputs = GenerationInputs(
