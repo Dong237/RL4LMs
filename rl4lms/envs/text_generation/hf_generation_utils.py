@@ -51,12 +51,20 @@ from transformers.generation.stopping_criteria import (
     StoppingCriteriaList,
     validate_stopping_criteria,
 )
-# from transformers.pytorch_utils import torch_int_div
 from transformers.utils import ModelOutput, logging
-
+from packaging import version
 
 logger = logging.get_logger(__name__)
 
+
+def torch_int_div(tensor1, tensor2):
+    """
+    A function that performs integer division across different versions of PyTorch.
+    """
+    if version.parse(torch.__version__) < version.parse("1.8.0"):
+        return tensor1 // tensor2
+    else:
+        return torch.div(tensor1, tensor2, rounding_mode="floor")
 
 @dataclass
 class GreedySearchDecoderOnlyOutput(ModelOutput):
@@ -2299,8 +2307,7 @@ class GenerationMixinWithRawScores:
                 next_token_scores, 2 * num_beams, dim=1, largest=True, sorted=True
             )
 
-            # next_indices = torch_int_div(next_tokens, vocab_size)
-            next_indices = next_tokens // vocab_size
+            next_indices = torch_int_div(next_tokens, vocab_size)
             next_tokens = next_tokens % vocab_size
 
             # stateless
@@ -2649,8 +2656,7 @@ class GenerationMixinWithRawScores:
                 next_token_scores, descending=True, dim=1)
             next_tokens = torch.gather(next_tokens, -1, _indices)
 
-            # next_indices = torch_int_div(next_tokens, vocab_size)
-            next_indices = next_tokens // vocab_size
+            next_indices = torch_int_div(next_tokens, vocab_size)
             next_tokens = next_tokens % vocab_size
 
             # stateless
@@ -3004,8 +3010,7 @@ class GenerationMixinWithRawScores:
                     next_token_scores, 2 * group_size, dim=1, largest=True, sorted=True
                 )
 
-                # next_indices = torch_int_div(next_tokens, vocab_size)
-                next_indices = next_tokens // vocab_size
+                next_indices = torch_int_div(next_tokens, vocab_size)
                 next_tokens = next_tokens % vocab_size
 
                 # stateless
@@ -3035,8 +3040,7 @@ class GenerationMixinWithRawScores:
                 # (beam_idx % group_size) -> offset of idx inside the group
                 reordering_indices[batch_group_indices] = (
                     num_beams *
-                    # torch_int_div(beam_idx, group_size) +
-                    (beam_idx // group_size) + 
+                    torch_int_div(beam_idx, group_size) +
                     group_start_idx + (beam_idx % group_size)
                 )
 
